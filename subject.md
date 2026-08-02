@@ -30,3 +30,4 @@ To enhance the game, you can consider implementing the following features:
 - Design a user interface (UI) for the game, including buttons for moving the `tiles` and displaying scores.
 - Add difficulty levels or additional gameplay options, such as the ability to choose `tile` values (e.g. 2, 4, 8, ...) or customize the grid size (e.g. 4x4, 5x5, 6x6, ...).
 - Incorporate sound effects or background music to improve the gameplay experience.
+- Ensure the game is responsive and supports different devices and screen sizes.
