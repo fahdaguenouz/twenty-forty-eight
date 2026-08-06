@@ -13,3 +13,19 @@ This project was developed based on specific functional requirements designed to
 - **Restart Game**: Easily restart the game when no moves are left or at any point.
 
 ## Project Structure (Refactored)
+
+The project separates UI logic from game logic for better maintainability:
+- `lib/main.dart`: The entry point of the app.
+- `lib/game_board.dart`: Contains the main state management and game grid logic.
+- `lib/models/tile.dart`: The data model representing a single tile on the board.
+- `lib/widgets/`: Extracted UI components for the score board, tile visual, and game over screen.
+- `lib/utils/game_colors.dart`: Contains functions to determine tile colors based on their value.
+
+## Getting Started
+
+To get started with this project, you need to have Flutter installed on your machine.
+Follow the [official Flutter installation guide](https://docs.flutter.dev/get-started/install) if you haven't already.
+
+### Commands
+
+**Run the app:**
