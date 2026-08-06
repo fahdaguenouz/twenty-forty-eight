@@ -29,3 +29,19 @@ Follow the [official Flutter installation guide](https://docs.flutter.dev/get-st
 ### Commands
 
 **Run the app:**
+Use the flutter run command to start the app on your connected device or emulator.
+```bash
+/opt/flutter/bin/flutter run
+```
+
+**Analyze the code:**
+Check for any linting errors or code issues.
+```bash
+/opt/flutter/bin/flutter analyze
+```
+
+**Build for release (e.g., Android):**
+```bash
+/opt/flutter/bin/flutter build apk
+```
+
