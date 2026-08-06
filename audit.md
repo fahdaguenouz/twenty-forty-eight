@@ -30,3 +30,8 @@
 
 ###### +Does the game contain a user interface (UI), including buttons for moving "pieces" and displaying scores?
 
+###### +Does the game have difficulty levels or other gameplay options, such as the ability to choose the value of the `tiles` (e.g. 2, 4, 8, etc.) or the size of the board (e.g. 4x4, 5x5, 6x6, etc.).
+
+###### +Does the game have sound effects or background music to enhance the gameplay experience.
+
+###### +Does the game support different devices and screen sizes like tablets or smartphones?
