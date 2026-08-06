@@ -45,3 +45,10 @@ Check for any linting errors or code issues.
 /opt/flutter/bin/flutter build apk
 ```
 
+## Project Flow
+1. The app starts and initializes a list of `Tile` objects.
+2. 3-4 random tiles (valued 2 or 4) are spawned in empty slots.
+3. The user swipes in a direction. The app calculates the farthest position each tile can move to.
+4. If two identical tiles collide, they merge, updating the score.
+5. After a successful move, a new tile is randomly spawned.
+6. The game continually checks for a "Game Over" state (no empty slots and no possible merges).
