@@ -8,3 +8,19 @@ import 'widgets/game_over_overlay.dart';
 
 enum SwipeDirection { up, down, left, right }
 
+class GameBoard extends StatefulWidget {
+  const GameBoard({super.key});
+
+  @override
+  State<GameBoard> createState() => _GameBoardState();
+}
+
+class _GameBoardState extends State<GameBoard> {
+  List<Tile> _tiles = [];
+  int _score = 0;
+  int _bestScore = 0;
+  bool _gameOver = false;
+  final int _gridSize = 4;
+  final _uuid = const Uuid();
+  bool _isMoving = false;
+  Offset? _dragStart;
