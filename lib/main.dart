@@ -15,3 +15,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
         useMaterial3: true,
+      ),
+      home: const GameBoard(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
