@@ -24,3 +24,19 @@ class _GameBoardState extends State<GameBoard> {
   final _uuid = const Uuid();
   bool _isMoving = false;
   Offset? _dragStart;
+  @override
+  void initState() {
+    super.initState();
+    _startGame();
+  }
+
+  void _startGame() {
+    setState(() {
+      _tiles.clear();
+      _score = 0;
+      _gameOver = false;
+      int initialTiles = Random().nextInt(2) + 3; // 3 or 4
+      for (int i = 0; i < initialTiles; i++) {
+        _spawnTile();
+      }
+    });
