@@ -40,3 +40,19 @@ class _GameBoardState extends State<GameBoard> {
         _spawnTile();
       }
     });
+  }
+
+  void _spawnTile() {
+    List<Point<int>> emptyCells = [];
+    for (int x = 0; x < _gridSize; x++) {
+      for (int y = 0; y < _gridSize; y++) {
+        if (!_tiles.any((t) => t.x == x && t.y == y)) {
+          emptyCells.add(Point(x, y));
+        }
+      }
+    }
+    if (emptyCells.isEmpty) return;
+
+    final randomCell = emptyCells[Random().nextInt(emptyCells.length)];
+    final value = Random().nextDouble() < 0.9 ? 2 : 4; //90% → 2, 10% → 4
+    _tiles.add(
