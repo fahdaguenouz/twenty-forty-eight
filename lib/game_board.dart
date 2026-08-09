@@ -104,3 +104,19 @@ class _GameBoardState extends State<GameBoard> {
         lineTiles.sort((a, b) {
           if (direction == SwipeDirection.up) {
             return a.y.compareTo(b.y);
+          } else {
+            return b.y.compareTo(a.y);
+          }
+        });
+      }
+
+      // Merge tiles in this row/column.
+      List<Tile> mergedLine = [];
+
+      int i = 0;
+
+      while (i < lineTiles.length) {
+        Tile current = lineTiles[i];
+
+        // Check if the next tile can merge.
+        if (i + 1 < lineTiles.length &&
