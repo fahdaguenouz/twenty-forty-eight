@@ -88,3 +88,19 @@ class _GameBoardState extends State<GameBoard> {
         // Get tiles from this row.
         lineTiles = oldTiles.where((tile) => tile.y == line).toList();
 
+        // Sort in the direction of movement.
+        lineTiles.sort((a, b) {
+          if (direction == SwipeDirection.left) {
+            return a.x.compareTo(b.x);
+          } else {
+            return b.x.compareTo(a.x);
+          }
+        });
+      } else {
+        // Get tiles from this column.
+        lineTiles = oldTiles.where((tile) => tile.x == line).toList();
+
+        // Sort in the direction of movement.
+        lineTiles.sort((a, b) {
+          if (direction == SwipeDirection.up) {
+            return a.y.compareTo(b.y);
