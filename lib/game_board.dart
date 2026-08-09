@@ -72,3 +72,19 @@ class _GameBoardState extends State<GameBoard> {
     _isMoving = true;
 
     // Remove old animation flags.
+    final oldTiles = _tiles
+        .map((tile) => tile.copyWith(isMerged: false, isNew: false))
+        .toList();
+
+    final List<Tile> newTiles = [];
+    int scoreToAdd = 0;
+
+    // Process each row or column independently.
+    for (int line = 0; line < _gridSize; line++) {
+      List<Tile> lineTiles;
+
+      if (direction == SwipeDirection.left ||
+          direction == SwipeDirection.right) {
+        // Get tiles from this row.
+        lineTiles = oldTiles.where((tile) => tile.y == line).toList();
+
