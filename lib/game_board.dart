@@ -120,3 +120,19 @@ class _GameBoardState extends State<GameBoard> {
 
         // Check if the next tile can merge.
         if (i + 1 < lineTiles.length &&
+            lineTiles[i + 1].value == current.value) {
+          Tile next = lineTiles[i + 1];
+
+          final mergedValue = current.value * 2;
+
+          // Keep the first tile's ID.
+          // This allows AnimatedPositioned to animate it smoothly.
+          final mergedTile = current.copyWith(
+            value: mergedValue,
+            isMerged: true,
+            isNew: false,
+          );
+
+          mergedLine.add(mergedTile);
+
+          scoreToAdd += mergedValue;
