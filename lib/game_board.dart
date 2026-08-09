@@ -56,3 +56,19 @@ class _GameBoardState extends State<GameBoard> {
     final randomCell = emptyCells[Random().nextInt(emptyCells.length)];
     final value = Random().nextDouble() < 0.9 ? 2 : 4; //90% → 2, 10% → 4
     _tiles.add(
+      Tile(
+        id: _uuid.v4(),
+        value: value,
+        x: randomCell.x,
+        y: randomCell.y,
+        isNew: true,
+      ),
+    );
+  }
+
+  void _handleSwipe(SwipeDirection direction) {
+    if (_gameOver || _isMoving) return;
+
+    _isMoving = true;
+
+    // Remove old animation flags.
