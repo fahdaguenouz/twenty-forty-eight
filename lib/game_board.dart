@@ -168,3 +168,19 @@ class _GameBoardState extends State<GameBoard> {
     // Check whether anything actually changed.
     final bool moved = !_sameBoard(oldTiles, newTiles);
 
+    if (!moved) {
+      _isMoving = false;
+      return;
+    }
+
+    // Update score.
+    _score += scoreToAdd;
+
+    if (_score > _bestScore) {
+      _bestScore = _score;
+    }
+
+    // Update the board so AnimatedPositioned can animate the movement.
+    setState(() {
+      _tiles = newTiles;
+    });
