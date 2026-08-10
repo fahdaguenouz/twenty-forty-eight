@@ -216,3 +216,19 @@ class _GameBoardState extends State<GameBoard> {
       if (oldTile.x != newTile.x ||
           oldTile.y != newTile.y ||
           oldTile.value != newTile.value) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  void _checkGameOver() {
+    if (_tiles.length < _gridSize * _gridSize) return;
+
+    for (int y = 0; y < _gridSize; y++) {
+      for (int x = 0; x < _gridSize; x++) {
+        Tile? t = _tiles.cast<Tile?>().firstWhere(
+          (t) => t?.x == x && t?.y == y,
+          orElse: () => null,
+        );
