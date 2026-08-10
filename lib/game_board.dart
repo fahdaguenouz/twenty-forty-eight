@@ -152,3 +152,19 @@ class _GameBoardState extends State<GameBoard> {
         int newY = tile.y;
 
         if (direction == SwipeDirection.left) {
+          newX = index;
+        } else if (direction == SwipeDirection.right) {
+          newX = _gridSize - 1 - index;
+        } else if (direction == SwipeDirection.up) {
+          newY = index;
+        } else if (direction == SwipeDirection.down) {
+          newY = _gridSize - 1 - index;
+        }
+
+        newTiles.add(tile.copyWith(x: newX, y: newY));
+      }
+    }
+
+    // Check whether anything actually changed.
+    final bool moved = !_sameBoard(oldTiles, newTiles);
+
