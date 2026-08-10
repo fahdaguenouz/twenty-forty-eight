@@ -200,3 +200,19 @@ class _GameBoardState extends State<GameBoard> {
   }
 
   bool _sameBoard(List<Tile> oldTiles, List<Tile> newTiles) {
+    if (oldTiles.length != newTiles.length) {
+      return false;
+    }
+
+    for (final oldTile in oldTiles) {
+      final match = newTiles.where((tile) => tile.id == oldTile.id);
+
+      if (match.isEmpty) {
+        return false;
+      }
+
+      final newTile = match.first;
+
+      if (oldTile.x != newTile.x ||
+          oldTile.y != newTile.y ||
+          oldTile.value != newTile.value) {
