@@ -184,3 +184,19 @@ class _GameBoardState extends State<GameBoard> {
     setState(() {
       _tiles = newTiles;
     });
+
+    // Wait for the movement animation to finish.
+    Future.delayed(const Duration(milliseconds: 150), () {
+      if (!mounted) return;
+
+      _spawnTile();
+
+      _checkGameOver();
+
+      setState(() {
+        _isMoving = false;
+      });
+    });
+  }
+
+  bool _sameBoard(List<Tile> oldTiles, List<Tile> newTiles) {
