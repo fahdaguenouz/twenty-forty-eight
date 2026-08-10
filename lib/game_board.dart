@@ -136,3 +136,19 @@ class _GameBoardState extends State<GameBoard> {
           mergedLine.add(mergedTile);
 
           scoreToAdd += mergedValue;
+
+          i += 2;
+        } else {
+          mergedLine.add(current);
+          i++;
+        }
+      }
+
+      // Put the resulting tiles at their final positions.
+      for (int index = 0; index < mergedLine.length; index++) {
+        Tile tile = mergedLine[index];
+
+        int newX = tile.x;
+        int newY = tile.y;
+
+        if (direction == SwipeDirection.left) {
