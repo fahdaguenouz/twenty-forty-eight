@@ -264,3 +264,19 @@ class _GameBoardState extends State<GameBoard> {
           '2048',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
+        centerTitle: true,
+        backgroundColor: Colors.orange[400],
+        elevation: 0,
+      ),
+
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ScoreBoard(label: 'SCORE', score: _score),
+
+                  ScoreBoard(label: 'BEST', score: _bestScore),
