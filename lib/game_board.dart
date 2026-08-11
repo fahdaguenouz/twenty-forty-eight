@@ -296,3 +296,19 @@ class _GameBoardState extends State<GameBoard> {
                     ),
                     child: const Text(
                       'Restart',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Expanded(
+              child: Center(
+                child: AspectRatio(
+                  aspectRatio: 1.0,
+                  child: Container(
+                    margin: const EdgeInsets.all(16.0),
