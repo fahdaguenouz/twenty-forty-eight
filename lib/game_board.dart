@@ -248,3 +248,19 @@ class _GameBoardState extends State<GameBoard> {
           );
           if (tb != null && tb.value == t.value) return;
         }
+      }
+    }
+
+    _gameOver = true;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[100],
+
+      appBar: AppBar(
+        title: const Text(
+          '2048',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
