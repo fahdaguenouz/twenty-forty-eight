@@ -232,3 +232,19 @@ class _GameBoardState extends State<GameBoard> {
           (t) => t?.x == x && t?.y == y,
           orElse: () => null,
         );
+        if (t == null) return;
+
+        if (x < _gridSize - 1) {
+          Tile? tr = _tiles.cast<Tile?>().firstWhere(
+            (t) => t?.x == x + 1 && t?.y == y,
+            orElse: () => null,
+          );
+          if (tr != null && tr.value == t.value) return;
+        }
+        if (y < _gridSize - 1) {
+          Tile? tb = _tiles.cast<Tile?>().firstWhere(
+            (t) => t?.x == x && t?.y == y + 1,
+            orElse: () => null,
+          );
+          if (tb != null && tb.value == t.value) return;
+        }
