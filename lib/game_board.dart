@@ -280,3 +280,19 @@ class _GameBoardState extends State<GameBoard> {
                   ScoreBoard(label: 'SCORE', score: _score),
 
                   ScoreBoard(label: 'BEST', score: _bestScore),
+
+                  ElevatedButton(
+                    onPressed: _startGame,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange[500],
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24.0,
+                        vertical: 12.0,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                    child: const Text(
+                      'Restart',
