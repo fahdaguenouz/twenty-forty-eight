@@ -328,3 +328,19 @@ class _GameBoardState extends State<GameBoard> {
                         if (_dragStart == null) return;
 
                         final Offset endPosition = details.localPosition;
+
+                        final double dx = endPosition.dx - _dragStart!.dx;
+
+                        final double dy = endPosition.dy - _dragStart!.dy;
+
+                        // Reset for the next swipe.
+                        _dragStart = null;
+
+                        // Ignore very small movements.
+                        const double minSwipeDistance = 30.0;
+
+                        if (dx.abs() < minSwipeDistance &&
+                            dy.abs() < minSwipeDistance) {
+                          return;
+                        }
+
