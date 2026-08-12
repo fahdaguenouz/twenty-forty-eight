@@ -392,3 +392,19 @@ class _GameBoardState extends State<GameBoard> {
                                     ),
                                   ),
 
+                              // Game tiles
+                              for (var tile in _tiles)
+                                TileWidget(
+                                  tile: tile,
+                                  tileSize: tileSize,
+                                  padding: padding,
+                                ),
+
+                              // Game over overlay
+                              if (_gameOver)
+                                GameOverOverlay(onRestart: _startGame),
+                            ],
+                          );
+                        },
+                      ),
+                    ),
