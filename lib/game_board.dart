@@ -344,3 +344,19 @@ class _GameBoardState extends State<GameBoard> {
                           return;
                         }
 
+                        // Horizontal swipe
+                        if (dx.abs() > dy.abs()) {
+                          if (dx > 0) {
+                            _handleSwipe(SwipeDirection.right);
+                          } else {
+                            _handleSwipe(SwipeDirection.left);
+                          }
+                        }
+                        // Vertical swipe
+                        else {
+                          if (dy > 0) {
+                            _handleSwipe(SwipeDirection.down);
+                          } else {
+                            _handleSwipe(SwipeDirection.up);
+                          }
+                        }
