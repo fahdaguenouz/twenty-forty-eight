@@ -376,3 +376,19 @@ class _GameBoardState extends State<GameBoard> {
                             children: [
                               // Empty board cells
                               for (int y = 0; y < _gridSize; y++)
+                                for (int x = 0; x < _gridSize; x++)
+                                  Positioned(
+                                    left: padding + x * (tileSize + padding),
+                                    top: padding + y * (tileSize + padding),
+                                    width: tileSize,
+                                    height: tileSize,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[300],
+                                        borderRadius: BorderRadius.circular(
+                                          4.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+
