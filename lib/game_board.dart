@@ -312,3 +312,19 @@ class _GameBoardState extends State<GameBoard> {
                   aspectRatio: 1.0,
                   child: Container(
                     margin: const EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+
+                    child: GestureDetector(
+                      // Detect when the finger starts touching the board.
+                      onPanStart: (details) {
+                        _dragStart = details.localPosition;
+                      },
+
+                      // Detect when the finger leaves the board.
+                      onPanEnd: (details) {
+                        if (_dragStart == null) return;
+
+                        final Offset endPosition = details.localPosition;
