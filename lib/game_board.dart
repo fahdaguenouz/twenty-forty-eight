@@ -360,3 +360,19 @@ class _GameBoardState extends State<GameBoard> {
                             _handleSwipe(SwipeDirection.up);
                           }
                         }
+                      },
+
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          const double padding = 12.0;
+
+                          final double availableWidth =
+                              constraints.maxWidth -
+                              (padding * (_gridSize + 1));
+
+                          final double tileSize = availableWidth / _gridSize;
+
+                          return Stack(
+                            children: [
+                              // Empty board cells
+                              for (int y = 0; y < _gridSize; y++)
