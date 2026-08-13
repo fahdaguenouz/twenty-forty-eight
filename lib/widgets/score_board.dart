@@ -23,3 +23,19 @@ class ScoreBoard extends StatelessWidget {
         children: [
           Text(
             label,
+            style: TextStyle(
+              fontSize: 12.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[200],
+            ),
+          ),
+          Text(
+            '$score',
+            style: const TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
