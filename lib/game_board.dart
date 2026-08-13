@@ -408,3 +408,13 @@ class _GameBoardState extends State<GameBoard> {
                         },
                       ),
                     ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
