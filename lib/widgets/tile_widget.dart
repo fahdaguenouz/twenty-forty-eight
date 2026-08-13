@@ -20,3 +20,19 @@ class TileWidget extends StatelessWidget {
       key: ValueKey(tile.id),
       duration: const Duration(milliseconds: 200),
       curve: Curves.easeInOut,
+      left: padding + tile.x * (tileSize + padding),
+      top: padding + tile.y * (tileSize + padding),
+      width: tileSize,
+      height: tileSize,
+      child: Container(
+        decoration: BoxDecoration(
+          color: GameColors.getTileColor(tile.value),
+          borderRadius: BorderRadius.circular(4.0),
+        ),
+        child: Center(
+          child: Text(
+            '${tile.value}',
+            style: TextStyle(
+              fontSize: tileSize * 0.4,
+              fontWeight: FontWeight.bold,
+              color: GameColors.getTextColor(tile.value),
