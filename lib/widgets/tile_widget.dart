@@ -36,3 +36,10 @@ class TileWidget extends StatelessWidget {
               fontSize: tileSize * 0.4,
               fontWeight: FontWeight.bold,
               color: GameColors.getTextColor(tile.value),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
