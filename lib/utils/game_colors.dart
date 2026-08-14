@@ -32,3 +32,5 @@ class GameColors {
 
   static Color getTextColor(int value) {
     return value <= 4 ? Colors.grey[800]! : Colors.white;
+  }
+}
