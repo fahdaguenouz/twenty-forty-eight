@@ -39,3 +39,6 @@ class ScoreBoard extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
