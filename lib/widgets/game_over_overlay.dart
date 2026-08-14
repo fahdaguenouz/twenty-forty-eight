@@ -27,3 +27,17 @@ class GameOverOverlay extends StatelessWidget {
             const SizedBox(height: 24.0),
             ElevatedButton(
               onPressed: onRestart,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.orange[500],
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 32.0, vertical: 16.0),
+              ),
+              child: const Text('Try Again', style: TextStyle(fontSize: 20)),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
