@@ -28,3 +28,8 @@ class Tile {
       value: value ?? this.value,
       x: x ?? this.x,
       y: y ?? this.y,
+      isMerged: isMerged ?? this.isMerged,
+      isNew: isNew ?? this.isNew,
+    );
+  }
+}
